@@ -230,17 +230,23 @@
       "description": "分包预下载规则。",
       "type": "object",
       "properties": {
-        "packages": {
-          "description": "进入页面后预下载分包的 root 或 name。APP 表示主包。",
-          "type": "array",
-          "items": {
-            "type": "string"
+        "页面路径": {
+          "description": "key 是页面路径，value 是进入此页面的预下载配置。",
+          "type": "object",
+          "properties": {
+            "packages": {
+              "description": "进入页面后预下载分包的 root 或 name。APP 表示主包。",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "network": {
+              "description": "在指定网络下预下载。",
+              "type": "string",
+              "enum": ["all", "wifi"]
+            }
           }
-        },
-        "network": {
-          "description": "在指定网络下预下载。",
-          "type": "string",
-          "enum": ["all", "wifi"]
         }
       }
     },
